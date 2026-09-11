@@ -1,0 +1,16 @@
+{
+  "name": "discord-clone-react",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "peerjs": "^1.4.7"
+  },
+  "scripts": {
+    "predeploy": "npm install",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+}
