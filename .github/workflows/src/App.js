@@ -17,16 +17,21 @@ export default function App() {
     const peer = new Peer();
     peer.on("open", (id) => {
       setPeerId(id);
+      console.log("Your Peer ID:", id);
     });
 
     peer.on("call", (call) => {
       navigator.mediaDevices
         .getUserMedia({ video: true, audio: true })
         .then((stream) => {
-          if (localVideoRef.current) localVideoRef.current.srcObject = stream;
+          if (localVideoRef.current) {
+            localVideoRef.current.srcObject = stream;
+          }
           call.answer(stream);
           call.on("stream", (remoteStream) => {
-            if (remoteVideoRef.current) remoteVideoRef.current.srcObject = remoteStream;
+            if (remoteVideoRef.current) {
+              remoteVideoRef.current.srcObject = remoteStream;
+            }
           });
         });
     });
@@ -37,14 +42,18 @@ export default function App() {
 
   // Start a call
   const startCall = () => {
-    if (!peerInstance.current || !remotePeerId) return;
+    if (!peerInstance.current) return;
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
-        if (localVideoRef.current) localVideoRef.current.srcObject = stream;
+        if (localVideoRef.current) {
+          localVideoRef.current.srcObject = stream;
+        }
         const call = peerInstance.current.call(remotePeerId, stream);
         call.on("stream", (remoteStream) => {
-          if (remoteVideoRef.current) remoteVideoRef.current.srcObject = remoteStream;
+          if (remoteVideoRef.current) {
+            remoteVideoRef.current.srcObject = remoteStream;
+          }
         });
         setIsCalling(true);
       });
@@ -61,7 +70,7 @@ export default function App() {
   return (
     <div style={{ padding: "16px" }}>
       <h1 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px" }}>
-        Discord Clone (React + WebRTC)
+        Discord Clone (WebRTC + AI)
       </h1>
       <div style={{ marginBottom: "16px" }}>
         <p>
