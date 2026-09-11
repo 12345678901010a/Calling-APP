@@ -1,16 +1,36 @@
 {
-  "name": "discord-clone-react",
+  "name": "discord-clone-ui",
   "version": "1.0.0",
-  "private": true,
+  "homepage": "https://12345678901010a.github.io/Calling-APP",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "peerjs": "^1.4.7"
   },
   "scripts": {
-    "predeploy": "npm install",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
