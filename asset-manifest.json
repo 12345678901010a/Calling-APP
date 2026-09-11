@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/Calling-APP/static/js/main.cf133c8d.js",
+    "index.html": "/Calling-APP/index.html",
+    "main.cf133c8d.js.map": "/Calling-APP/static/js/main.cf133c8d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cf133c8d.js"
+  ]
+}
